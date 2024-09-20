@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.container {
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+input {
+  font-weight: bold;
+  text-align: center;
+  margin: 5px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Table-container {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.table-wrapper {
+  width: 80%; /* Adjust the table width as per your need */
+}
+
+Table td {
+  margin: 5px;
+  padding: 5px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+Button {
+  padding: 5px;
+  margin: 5px;
+}
+
+.Seprator {
+  margin: 5px;
+  background-color: #282c34;
+  color: #fff;
+  border: 1px solid black;
+}
