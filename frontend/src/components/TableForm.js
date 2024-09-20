@@ -51,6 +51,8 @@ function TableForm() {
         updatedProduct
       );
 
+      // ... = item => ...
+
       // Update the product in the local state
       setData((prevData) =>
         prevData.map((item) =>

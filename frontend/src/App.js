@@ -1,6 +1,5 @@
 import "./App.css";
 import ProductRegisterForm from "./components/ProductRegisterForm";
-// import ProductRecords from "./components/ProductRecords";
 import TableForm from "./components/TableForm";
 
 function App() {
