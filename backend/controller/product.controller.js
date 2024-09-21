@@ -4,10 +4,7 @@ const constants = require("../config/constants");
 
 exports.getProductDetails = async (req, res) => {
   try {
-    const getProduct = await modelProduct
-      .find()
-      .sort({ productName: 1 })
-      .limit(10);
+    const getProduct = await modelProduct.find().sort({ productName: 1 });
     res
       .status(constants.OK)
       .json({ message: constants.RECORD_FOUND, item: getProduct });
@@ -76,5 +73,38 @@ exports.deleteProductDetails = async (req, res) => {
       .json({ message: constants.REMOVED, item: deleteProduct });
   } catch (error) {
     res.status(constants.BAD_REQUEST).json({ error: constants.REMOVE_FAIL });
+  }
+};
+
+exports.getPaginatedProducts = async (req, res) => {
+  try {
+    // Extract page and limit from query parameters with default values
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    // Calculate the skip value
+    const skip = (page - 1) * limit;
+
+    // Fetch paginated data
+    const products = await modelProduct.find().skip(skip).limit(limit).exec();
+
+    // Get total count of documents for pagination
+    const total = await modelProduct.countDocuments();
+
+    // Calculate total pages
+    const totalPages = Math.ceil(total / limit);
+
+    // Return paginated response
+    res.json({
+      page,
+      limit,
+      totalPages,
+      totalProducts: total,
+      products,
+    });
+  } catch (error) {
+    res
+      .status(constants.INTERNAL_SERVER_ERROR)
+      .json({ message: constants.SERVER_ERROR, error });
   }
 };

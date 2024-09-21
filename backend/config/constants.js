@@ -9,6 +9,7 @@ exports.CREATED = 201;
 exports.ACCEPTED = 202;
 exports.BAD_REQUEST = 400;
 exports.NOT_FOUND = 404;
+exports.INTERNAL_SERVER_ERROR = 500;
 
 // MESSAGES
 exports.RECORD_FOUND = "PRODUCT DATA FOUND!!";
@@ -19,3 +20,4 @@ exports.UPDATED = "PRODUCT Data Updated SUCCESSFULLY!!";
 exports.UPDATE_FAILED = "UPDATION FAILED!!";
 exports.REMOVED = "PRODUCT SUCCESSFULLY REMOVED!!";
 exports.REMOVE_FAIL = "RECORD NOT DELETED!!";
+exports.SERVER_ERROR = "Error fetching products";
