@@ -41,6 +41,16 @@ This is a Product Management system built with React for the frontend and Node.j
 ### Prerequisites
 
 - Node.js and npm installed on your machine.
+- Required Packages are :
+  - For the Frontend side:
+    - Axios
+    - react-bootstrap
+  - For the Backend side:
+    - express
+    - cors
+    - mongoose
+    - nodemon
+    - body-parser (optional)
 - MongoDB instance running (locally or via a cloud provider like MongoDB Atlas).
 
 ### Clone the Repository
